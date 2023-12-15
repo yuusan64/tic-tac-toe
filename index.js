@@ -9,10 +9,27 @@
 //      return this.sign==="X"?"O":"X";
 //     },
 // }
+
+// let cat=document.createElement('IMG');
+// cat.setAttribute('src', 'assets/cat-face.png');
+// var cat="background-image: url('https://img.icons8.com/doodle/144/satoru-gojo.png'); background-repeat: no-repeat; background-size: 120px 120px;background-position: center;" /*filter:hue-rotate(351deg) saturate(0.8) drop-shadow(1px 1px 4px black)"*/
+// var dog="background-image: url('assets/goku.png'); background-repeat: no-repeat; background-size: 120px 120px;background-position: center;" /*filter: hue-rotate(4deg) saturate(0.6);"*/
+
+var cat="background-image: url('https://img.icons8.com/doodle/144/satoru-gojo.png'); background-repeat: no-repeat; background-size: 120px 120px;background-position: center;" /*filter:hue-rotate(351deg) saturate(0.8) drop-shadow(1px 1px 4px black)"*/
+var dog="background-image: url('assets/goku.png'); background-repeat: no-repeat; background-size: 120px 120px;background-position: center;"
+
+// let dog=document.createElement('IMG');
+// dog.setAttribute('style', style);
+
+
 var Gameboard={
-    turn: "X",
+    turn: cat,
+    data: "cat",
     changeTurns(){
-    return this.turn==="X"?"O":"X";
+    return (this.turn===cat?dog:cat);
+    },
+    changeData(){
+    return (this.data==="cat"?"dog":"cat");
     },
     arr: document.getElementsByClassName("box"),
     winConditions:[
@@ -26,23 +43,23 @@ var Gameboard={
         [2,4,6],   
     ],
     checkWin(){
-        let boxtext = document.getElementsByClassName('boxtext');
-        
-        this.winConditions.forEach(i=>{
-            console.log(boxtext[i[0]]);
-          if( (boxtext[i[0]].innerText===boxtext[i[1]].innerText) && (boxtext[i[2]].innerText===boxtext[i[1]].innerText) && (boxtext[i[0]].innerText!=="")){
-           console.log(boxtext[i[0]].innerText + " Won");
+            this.winConditions.forEach(i=>{
+          if( (this.arr[i[0]].getAttribute('data-name')===this.arr[i[1]].getAttribute('data-name')) && (this.arr[i[2]].getAttribute('data-name')===this.arr[i[1]].getAttribute('data-name')) && (this.arr[i[0]].getAttribute('data-name')!==null)){
+           console.log(this.arr[i[0]].getAttribute('data-name') + " Won");
           }
         })
     },
     playGame(){
+
         Array.from(this.arr).forEach(element => {
        let boxtext = element.querySelector('.boxtext');
        element.addEventListener("click", ()=>{
        if(boxtext.innerText===""){
-       boxtext.innerText=this.turn;
+       element.setAttribute('style', this.turn);
+       element.setAttribute('data-name', this.data);
        this.turn= this.changeTurns();
-       this.checkWin(boxtext);
+       this.data=this.changeData();
+       this.checkWin();
        
        }
     }
