@@ -5,7 +5,7 @@
 }
 
 nav{
-    background-color: rgb(37, 9, 37);
+    background-color: rgb(15, 46, 80);
     color: white;
     height: 65px;
     font-size: 27px;
@@ -80,7 +80,7 @@ nav ul{
     border-bottom: 0;
 }
 
-#reset {
+#reset button {
     margin: 0 23px;
     padding: 1px 18px;
     background: #f3e7f9;
@@ -92,12 +92,15 @@ nav ul{
 }
 
 .line{
-    background-color: black;
-    height: 3px;
     width: 0;
+    height: 3px;
     position: absolute;
-    background-color: #911d91;
+    background-color: #000000;
     transition: width 1s ease-in-out;
+}
+.inner{
+    height: 2em;
+    width: 2em;
 }
 
 @media screen and (max-width: 950px)
