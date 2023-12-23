@@ -1,3 +1,4 @@
+
 //game factory function
 const createGame = () => {
   let gameOver = false;
@@ -19,7 +20,7 @@ const createGameboard = () => {
   const container = document.querySelector('.container');
   let turn = gojo;
   let data = "Gojo";
-
+  const gameContainer= document.querySelector('.gameContainer');
 
   const togglePlayer = () => {
     turn = (turn === gojo) ? goku : gojo;
@@ -92,6 +93,7 @@ const createGameboard = () => {
     turn = gojo;
     data = "Gojo";
     result.innerHTML="";
+    gameContainer.setAttribute('style', "gap: 0;");
     moves=0;
     game.setGameOver(false); // Reset game state
     container.removeEventListener('click', playGame);
@@ -103,6 +105,7 @@ const createGameboard = () => {
   const playGame = (event) => {
     const clickedElement = event.target.closest('.box .inner');
     if (clickedElement && !clickedElement.hasAttribute('data-name')) {
+      gameContainer.setAttribute('style', "gap: 3em;");
       clickedElement.setAttribute('style', turn);
       clickedElement.setAttribute('data-name', data);
       togglePlayer();
