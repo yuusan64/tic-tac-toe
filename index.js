@@ -63,7 +63,6 @@ const createGameboard = () => {
         return;
       }
     });
-    console.log(moves);
     //check for tie
     if(moves===9 && result.innerHTML===""){
       result.innerHTML="It's a tie!"
