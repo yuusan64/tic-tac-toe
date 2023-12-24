@@ -34,7 +34,7 @@ nav ul {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 3em;
+    margin: 3em 0;
 }
 
 .container {
@@ -84,12 +84,13 @@ nav ul {
     font-size: 2.5rem;
 }
 
-.gif img {
+.Gojo, .Goku{
     width: 0;
     transition: width 0.5s ease-in-out;
 }
 
-.gif {
+.gifSize {
+    width: 12vw;
     margin: 0 auto;
 }
 
@@ -117,7 +118,8 @@ nav ul {
    
     display: flex;
     align-items: center;
-    flex-direction: column;
+    flex-direction: column; 
+    gap: 1.5em;
 
 }
 
@@ -126,11 +128,12 @@ nav ul {
 }
 
 .line {
+    transition: width 0.5s ease-in-out;
     width: 0;
     height: 3px;
     position: absolute;
     background-color: #000000;
-    transition: width 1s ease-in-out;
+    
 }
 
 .inner {
@@ -161,13 +164,74 @@ h5{
     color: #92a7bf;
 }
 
+
+
+/*Line conditions*/
+
+.line.win-0 { /* Horizontal top row */
+    width: 100%;
+    top: 18%; 
+    left: 0;
+    transform: rotate(0deg);
+  }
+  
+  .line.win-1 { /* Horizontal middle row */
+    width: 100%;
+    top: 50%; 
+    left: 0;
+    transform: rotate(0deg);
+  }
+
+  .line.win-2 { /* Horizontal top row */
+    width: 100%;
+    top: 82%; 
+    left: 0;
+    transform: rotate(0deg);
+  }
+
+  .line.win-3 {
+    width: 100%;
+    top: 50%;
+    left: -32%;
+    transform: rotate(90deg);
+}
+
+.line.win-4 {
+    width: 100%;
+    top: 50%;
+    left: 0;
+    transform: rotate(90deg);
+}
+
+.line.win-5 {
+    width: 100%;
+    top: 50%;
+    left: 32%;
+    transform: rotate(90deg);
+}
+
+.line.win-6 {
+    width: 100%;
+    top: 50%;
+    left: 0;
+    transform: rotate(45deg);
+}
+
+
+.line.win-7 {
+    width: 100%;
+    top: 50%;
+    left: 0;
+    transform: rotate(135deg);
+}
+
+
+
 @media screen and (max-width: 950px) {
     .gameContainer {
         flex-wrap: wrap;
     }
-    .gameInfo {
-        margin-top: 34px;
-    }
+
     .gameInfo h1 {
         font-size: 1.5rem;
     }
@@ -180,53 +244,45 @@ h5{
     }
    
 
-}
-
-/* @media screen and (min-width: 500px) {
-
-    .inner{
-        background-size: 90px 90px;
-    }
-    .result .gif{
-        position: static;
-    }
-
-} */
+} 
 
 /*Extra small devices*/
 @media only screen and (max-width: 600px) {
     
     div[data-name="Goku"]{
-        background-size: 70px 60px;
+        background-size: 65px 55px;
     }
-    .Gojo, .Goku{
-        width: 150px;
+    .gifSize {
+        width: 35vw;
     }
-    .inner{
-        background-size: 60px 60px;
-    }   
+    .inner {
+        background-size: 55px 55px;
+    }
     nav{
         font-size:2.5em;
     }
     #reset button {
         font-size: 16px;
     }
-
-    .footer{
-        gap:1em;
+    .line {
+        height: 2px; /* Thinner line for smaller screens */
+      }
+      .result {
+   
+        font-size: 1.5em;
     }
   } 
   
   /*Small devices*/
-  @media only screen and (min-width: 600px) {
+  @media only screen and (min-width: 600px) and (max-width: 768px) {
    
     div[data-name="Goku"] {
         background-size: 95px 85px;
     }
+    .line {
+        height: 4px; /* Thicker line for larger screens */
+      }
     
-    .Gojo, .Goku{
-        width: 165px;
-    }
     .inner {
         background-size: 85px 85px;
     }
@@ -237,18 +293,13 @@ h5{
         font-size: 20px;
     }
     
-    .footer{
-        gap:1em;
-    }
+    
     
   } 
   
   /* Medium devices*/
- @media only screen and (min-width: 768px) {
+  @media only screen and (min-width: 768px) and (max-width: 992px) {
    
-    .Gojo, .Goku{
-        width: 185px; 
-    }
     div[data-name="Goku"]{
         background-size: 130px 120px;
     }
@@ -258,13 +309,21 @@ h5{
     nav{
         font-size:5em;
     }
-   
+    .gifSize {
+        width: 26vw;
+    }
   }  
   
   /* Large devices */
-   @media only screen and (min-width: 992px) {
+  @media only screen and (min-width: 992px) {
     html{
         font-size: 55%;
+    }
+    .inner {
+        background-size: 120px 120px;
+    }
+    div[data-name="Goku"]{
+        background-size: 130px 120px;
     }
 }
   /* Extra large devices*/
