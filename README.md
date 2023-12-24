@@ -1,4 +1,4 @@
-# tic-tac-toe
+# Tic-tac-toe
 https://yuusan64.github.io/tic-tac-toe/
 
 Concepts used: factory functions, closures, encapsulation, object handling
