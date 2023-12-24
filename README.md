@@ -3,9 +3,11 @@ https://yuusan64.github.io/tic-tac-toe/
 
 Concepts used: factory functions, closures, encapsulation, object handling
 
-   ![Screenshot from 2023-12-24 21-40-25](https://github.com/yuusan64/tic-tac-toe/assets/42761151/09f33a63-9f9a-4140-8d76-287e4900717d)
+![Screenshot from 2023-12-24 21-40-25](https://github.com/yuusan64/tic-tac-toe/assets/42761151/376aa5b9-50cc-4fde-a91e-7e671c7622b7)
 
-![Screenshot from 2023-12-24 21-40-10](https://github.com/yuusan64/tic-tac-toe/assets/42761151/e7eb3a1f-3f26-428a-a150-94c4d2c9b5d3)
+
+![Screenshot from 2023-12-24 21-40-10](https://github.com/yuusan64/tic-tac-toe/assets/42761151/ee61e2c8-0939-4008-80be-efa8d2ff9ab9)
+
 
 On Phone
 
