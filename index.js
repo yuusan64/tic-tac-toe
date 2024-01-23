@@ -97,10 +97,16 @@ const createGameboard = () => {
     const line = document.querySelector(".line");
     line.style.width = '0'; // Retract the line
 
+    if (winner !== undefined) {
+      const gifElement = document.querySelector('.gif');
+      const winnerElement = gifElement ? gifElement.getElementsByClassName(winner)[0] : null;
+      if (winnerElement) {
+        winnerElement.classList.remove("gifSize");
+      }
+    }
+    
   
-    if(winner !== undefined) {
-      document.querySelector('.gif').getElementsByClassName(winner)[0].classList.remove("gifSize");
-    } 
+    console.log(result);
     
     turn = gojo;
     data = "Gojo";
@@ -110,6 +116,7 @@ const createGameboard = () => {
     game.setGameOver(false); // Reset game state
     container.removeEventListener('click', playGame);
     container.addEventListener('click', playGame);
+    document.getElementById('game')
   };
 
   // Play game logic
